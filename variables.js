@@ -20,7 +20,7 @@ const cents = 100;
 console.log(cents);
 
 //Now if we try to re write a const type variable, an error will occur;
-cents = 500;
+// cents = 500;
 console.log(cents);         //Uncaught TypeError: Assignment to constant variable.
 
 
