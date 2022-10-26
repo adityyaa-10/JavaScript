@@ -1,0 +1,17 @@
+.error{
+    margin: 10px;
+    color: rgb(255, 0, 0);
+    border: 1px solid  rgb(255, 0, 0);
+}
+
+.success{
+    margin: 10px;
+    color: rgb(17, 255, 0);
+    border: 1px solid rgb(17, 255, 0);
+}
+
+.warning{
+    margin: 10px;
+    color: rgb(255, 221, 0);
+    border: 1px solid rgb(255, 221, 0);
+}
