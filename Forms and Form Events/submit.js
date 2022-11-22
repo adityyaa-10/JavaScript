@@ -11,18 +11,18 @@ const username =  'adityyaa';
 
 const pattern = /^[a-z]{6,}$/;
 
-// let result = pattern.test(username);
-// console.log(result);
+let result = pattern.test(username);
+console.log(result);
 
-// if(result){
-//     console.log('passed');
+if(result){
+    console.log('passed');
 
-// }
+}
 
-// else{
-//     console.log('failed')
-// }
+else{
+    console.log('failed')
+}
 
-let result = username.search(pattern);
+// let result = username.search(pattern);
 
 console.log(result);
