@@ -36,8 +36,21 @@ console.log(2);
 
 //  To counter callback hell, we use promises in our code;
 
+// getTodos('todos/luigi.json').then((data) => {
+//     console.log('Promise Resolved : ', data)
+// }).catch((err) => {
+//     console.log('Promise Rejected : ', err)
+// })
+
+// Chaining Promises
 getTodos('todos/luigi.json').then((data) => {
-    console.log('Promise Resolved : ', data)
+    console.log('Promise 1 Resolved : ', data)
+    return getTodos('todos/mario.json')
+}).then((data) => {
+    console.log('Promise 2 Resolved : ', data);
+    return getTodos('todos/shaun.json')
+}).then((data) => {
+    console.log('Promise 3 Resolved : ', data);
 }).catch((err) => {
     console.log('Promise Rejected : ', err)
 })
