@@ -1,16 +1,17 @@
-const getTodos = (callback) => {
+const getTodos = (resource, callback) => {
     const request = new XMLHttpRequest();
 
     request.addEventListener('readystatechange', () => {
         // console.log(request, request.readyState);
         if (request.readyState === 4 && request.status === 200) {
-            callback(undefined, request.responseText)
+            const data = JSON.parse(request.responseText)
+            callback(undefined, data)
         } else if (request.readyState === 4) {
             callback('Could not fetch data0', undefined)
         }
     })
 
-    request.open('GET', 'https://jsonplaceholder.typicode.com/todos/');
+    request.open('GET', resource);
     request.send();
 }
 
@@ -18,13 +19,16 @@ console.log(1);
 console.log(2);
 
 
-getTodos((err, data) => {
-    console.log('Callback Fired');
-    if (err) {
-        console.log(err);
-    } else {
+// Callback hell :- If there is a situation of nested callbacks
+
+getTodos('./todos/luigi.json', (err, data) => {
+    console.log(data);
+    getTodos('./todos/shaun.json', (err, data) => {
         console.log(data);
-    }
+        getTodos('./todos/mario.json', (err, data) => {
+            console.log(data);
+        });
+    });
 });
 
 console.log(3);
